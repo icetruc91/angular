@@ -1,0 +1,18 @@
+.input {
+  text-align:right;
+}
+.profileHeader{
+  color: cornflowerblue;
+}
+
+.centerThis {
+  text-align: center;
+  align-content: center;
+}
+
+
+
+div {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}

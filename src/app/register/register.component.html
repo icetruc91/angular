@@ -1,0 +1,17 @@
+<div class="container-fluid row">
+  <div class="col-3"></div>
+  <div class="col-6 centerThis">
+    <h1 class="registerHeader">Welcome, let's get you registered!</h1>
+    <input [(ngModel)]="username" class="form-control" placeholder="Username"/>
+    <input [(ngModel)]="password" class="form-control"  type="password" placeholder="Password"/>
+    <input [(ngModel)]="confirmPassword" class="form-control" type="password" placeholder="Confirm Password"/>
+    <button (click)="register(username, password, confirmPassword)"
+            class="btn btn-primary btn-block">
+      Login
+    </button>
+    <a routerLink="/home">Home</a> |
+    <a routerLink="/login">Login</a> |
+    <a routerLink="/register">Register</a>
+  </div>
+  <div class="col-3"></div>
+</div>

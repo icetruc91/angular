@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <h1>Welcome to WhiteBoard</h1>
+
+  <div class="row">
+    <h5 class="col-1">
+      <a routerLink="/home">Home</a>
+    </h5>
+    <h5 class="col-1">
+      <a routerLink="/login">Login</a>
+    </h5>
+    <h5 class="col-1">
+      <a routerLink="/register">Register</a>
+    </h5>
+  </div>
+  <hr/>
+  <app-cocourse-grid></app-cocourse-grid>
+</div>
+
+<!--<div class="row">-->
+
+<!--<div class="col-3">-->
+<!--<h2>Courses {{cou rses.length}}</h2>-->
+<!--&lt;!&ndash;Iterating over courses.&ndash;&gt;-->
+<!--&lt;!&ndash;click events used for selecting.&ndash;&gt;-->
+<!--&lt;!&ndash;Highlighting, ngClass{class you want to apply: }&ndash;&gt;-->
+<!--<ul class="list-group">-->
+<!--<li (click)="selectCourse(course)"-->
+<!--[ngClass]="{'active': course.id == selectedCourse.id}"-->
+<!--*ngFor="let course of courses"-->
+<!--class="list-group-item">-->
+<!--{{course.title}}-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+
+
+<!--<div class="col-3">-->
+<!--<ul class="list-group">-->
+<!--<h2>Modules</h2>-->
+<!--<li (click)="selectModule(module)"-->
+<!--*ngFor="let module of selectedCourse.modules"-->
+<!--[ngClass]="{'active': module.id == selectedModule.id}"-->
+<!--class="list-group-item">-->
+<!--{{module.title}}-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+
+
+<!--<div class="col-3">-->
+<!--<ul class="list-group">-->
+<!--<h2>Lessons</h2>-->
+<!--<li (click)="selectLesson(lesson)"-->
+<!--*ngFor="let lesson of selectedModule.lessons"-->
+<!--[ngClass]="{'active': lesson.id == selectedLesson.id}"-->
+<!--class="list-group-item">-->
+<!--{{lesson.title}}-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+
+<!--<div class="col-3">-->
+<!--<ul class="list-group">-->
+<!--<h2>Topics</h2>-->
+<!--<li (click)="selectTopic(topic)"-->
+<!--*ngFor="let topic of selectedLesson.topics"-->
+<!--[ngClass]="{'active': topic.id == selectedTopic.id}"-->
+<!--class="list-group-item">-->
+<!--{{topic.title}}-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+
+
+<!--</div>-->
+
+
+
+
+
+

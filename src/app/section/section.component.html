@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <h1>Section for course: {{courseId}}</h1>
+  <div *ngIf="username === 'admin' && password === 'admin'">
+
+    <input placeholder="Section Name:"
+           [(ngModel)]="sectionName"
+           class="form-control">
+
+    <input placeholder="Seats Available:"
+           [(ngModel)]="seats"
+           class="form-control">
+
+    <button
+      (click)="createSection(sectionName, seats)"
+      class="btn btn-success btn-block">
+      Add Section
+    </button>
+    <hr>
+
+  </div>
+
+  <!--<div class="list-group">-->
+  <div
+    *ngFor="let section of sections" class="col-sm-3">
+
+    <div class="card">
+
+
+      <div class="card-body">
+        {{section.name}}
+        <p>{{section.seats}} Seats</p>
+        <div>
+          <button
+            *ngIf="section.seats > 0"
+            (click)="enroll(section)"
+            class="btn btn-primary wbdv">Enroll</button>
+          <button
+            *ngIf="username === 'admin' && password === 'admin'"
+            (click)="delete(section)"
+            class="btn btn-primary wbdv">Delete</button>
+        </div>
+        <div>
+          <button
+            *ngIf="username === 'admin' && password === 'admin'"
+            (click)="edit(section, 'name')"
+            class="btn btn-primary wbdv">Edit Section Name</button>
+          <button
+            *ngIf="username === 'admin' && password === 'admin'"
+            (click)="edit(section, 'seat')"
+            class="btn btn-primary wbdv">Edit Seats</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!--</div>-->
+</div>
