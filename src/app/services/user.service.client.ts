@@ -22,7 +22,7 @@ export class UserServiceClient {
   }
 
   findUserByCredentials(username, password) {
-    return fetch( 'http://localhost:3000/findUserByCredentials/' + username + '/username/' + password + '/password')
+    return fetch( 'http://localhost:3000/api/user/'+username+'/username/'+password+'/password')
       .then(function (response) {
         if (response.status > 400) {
           return null;
@@ -54,7 +54,7 @@ export class UserServiceClient {
   }
 
   findUserByUsername(username) {
-    return fetch('http://localhost:3000/api/updateProfile/' + username + '/username')
+    return fetch('http://localhost:3000/api/user/' + username + '/username')
       .then(function (response) {
         if (response.status > 400) {
           return null;
@@ -85,6 +85,14 @@ export class UserServiceClient {
       credentials: 'include'
     });
   }
+
+  findUserById(userId) {
+    return fetch('http://localhost:3000/api/user/' + userId, {
+      credentials: 'include'
+    })
+      .then(response => response.json());
+  }
+
 
 
 }

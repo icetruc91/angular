@@ -2,8 +2,12 @@
   <div class="col-3"></div>
   <div class="col-6 centerThis">
   <h1 class="loginHeader">Login here!</h1>
-  <input [(ngModel)]="username" class="form-control" placeholder="Username"/>
-  <input [(ngModel)]="password" class="form-control" placeholder="Password"/>
+  <input [(ngModel)]="username"
+         class="form-control"
+         placeholder="Username"/>
+  <input [(ngModel)]="password"
+         class="form-control"
+         placeholder="Password"/>
   <button (click)="login(username, password)"
     class="btn btn-primary btn-block">
     Login

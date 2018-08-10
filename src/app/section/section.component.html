@@ -1,57 +1,73 @@
 <div class="container-fluid">
-  <h1>Section for course: {{courseId}}</h1>
-  <div *ngIf="username === 'admin' && password === 'admin'">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="profileHeader centerThis col-8">
+      <h1>Section for course: {{courseId}}</h1>
+      <a routerLink="/home">Home</a> |
+      <a routerLink="/profile">Profile</a> |
+      <a class="logout" (click)="logout()">Logout</a>
 
-    <input placeholder="Section Name:"
-           [(ngModel)]="sectionName"
-           class="form-control">
+      <div *ngIf="username === 'admin' && password === 'admin'">
 
-    <input placeholder="Seats Available:"
-           [(ngModel)]="seats"
-           class="form-control">
+        <input placeholder="Section Name:"
+               [(ngModel)]="sectionName"
+               class="form-control">
 
-    <button
-      (click)="createSection(sectionName, seats)"
-      class="btn btn-success btn-block">
-      Add Section
-    </button>
-    <hr>
+        <input placeholder="Seats Available:"
+               [(ngModel)]="seats"
+               class="form-control">
 
+        <button
+          (click)="createSection(sectionName, seats)"
+          class="btn btn-primary btn-block">
+          Add Section
+        </button>
+        <hr>
+
+      </div>
+    </div>
+    <div class="col-2"></div>
   </div>
 
+
   <!--<div class="list-group">-->
-  <div
-    *ngFor="let section of sections" class="col-sm-3">
-
-    <div class="card">
 
 
-      <div class="card-body">
-        {{section.name}}
-        <p>{{section.seats}} Seats</p>
-        <div>
+  <div class="row">
+    <div *ngFor="let section of sections" class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="profileHeader card-title">
+            {{section.name}}
+          </h3>
+          <p>Seats Available: {{section.seats}}</p>
           <button
             *ngIf="section.seats > 0"
             (click)="enroll(section)"
-            class="btn btn-primary wbdv">Enroll</button>
+            class="btn btn-dark wbdv">Enroll
+          </button>
           <button
             *ngIf="username === 'admin' && password === 'admin'"
             (click)="delete(section)"
-            class="btn btn-primary wbdv">Delete</button>
-        </div>
-        <div>
+            class="btn btn-dark wbdv">Delete
+          </button>
+
+
           <button
             *ngIf="username === 'admin' && password === 'admin'"
             (click)="edit(section, 'name')"
-            class="btn btn-primary wbdv">Edit Section Name</button>
+            class="btn btn-dark wbdv">Edit Section Name
+          </button>
           <button
             *ngIf="username === 'admin' && password === 'admin'"
             (click)="edit(section, 'seat')"
-            class="btn btn-primary wbdv">Edit Seats</button>
+            class="btn btn-dark wbdv">Edit Seats
+          </button>
+
         </div>
       </div>
+    </div>
 
     </div>
-  </div>
-  <!--</div>-->
 </div>
+

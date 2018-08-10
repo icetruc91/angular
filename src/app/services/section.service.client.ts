@@ -1,6 +1,6 @@
 export class SectionServiceClient {
 
-  SECTION_URL = 'http://localhost:3000/api//api/course/COURSE_ID/section';
+  SECTION_URL = 'http://localhost:3000/api/course/COURSE_ID/section';
   createSection(courseId, name, seats) {
     const section = {
       name: name,
@@ -24,7 +24,7 @@ export class SectionServiceClient {
   }
 
   updateSection(section) {
-    const url = 'http://localhost:3000/api/api/section/' + section._id;
+    const url = 'http://localhost:3000/api/section/' + section._id;
     return fetch(url, {
       method: 'put',
       credentials: 'include',

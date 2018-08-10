@@ -1,27 +1,12 @@
-<!--<div>-->
-<!--<h1>PLEASE WORK</h1>-->
-<!--<a routerLink="/home">Course Navigator</a> |-->
-<!--<a routerLink="/login">Login</a> |-->
-<!--<a routerLink="/register">Register</a> |-->
-<!--<a routerLink="/profile">Profile</a> |-->
-<!--<a routerLink="/sections">Sections</a>-->
-<!--<h2>Welcome {{currentUser.username}}</h2>-->
-<!--<h2>{{currentUser.username}}</h2>-->
-
-<!--<h3>Enrollments</h3>-->
-<!--<ul class="list-group">-->
-<!--<li class="list-group-item" *ngFor="let section of currentUser.sections">-->
-<!--{{section.title}} (seats: 23)-->
-<!--<button class="float-right">Drop</button>-->
-<!--</li>-->
-<!--</ul>-->
-<!--</div>-->
-
 
 <div class="container-fluid row">
   <div class="col-2"></div>
   <div class="col-8 centerThis">
     <h1 class="profileHeader">Profile Page</h1>
+    <a routerLink="/home">Home</a> |
+    <a routerLink="/login">Login</a> |
+    <a routerLink="/register">Register</a> |
+    <a class="logout" (click)="logout()">Logout</a>
     <div class="row">
       <div class="col-2">
         <label>Username: </label>
@@ -29,7 +14,8 @@
       <div class="col-10">
         <input [(ngModel)]="username"
                class="form-control container-fluid"
-               value="{{currentUser.username}}" readonly/>
+               placeholder="username"/>
+
       </div>
     </div>
 
@@ -40,8 +26,9 @@
       <div class="col-10">
         <input [(ngModel)]="password"
                class="form-control container-fluid"
-               value="{{currentUser.password}}"
                placeholder="password"/>
+
+
       </div>
     </div>
 
@@ -52,8 +39,10 @@
       <div class="col-10">
         <input [(ngModel)]="firstName"
                class="form-control container-fluid"
-               value="{{currentUser.firstName}}"
-               placeholder="First Name"/>
+               placeholder="First Name"
+        />
+
+
       </div>
     </div>
 
@@ -65,6 +54,7 @@
         <input [(ngModel)]="lastName"
                class="form-control container-fluid"
                placeholder="Last Name"/>
+
       </div>
     </div>
 
@@ -75,7 +65,8 @@
       <div class="col-10">
         <input [(ngModel)]="phoneNumber"
                class="form-control container-fluid"
-               placeholder="Phone Number"/>
+               placeholder="Phone Number"
+        />
       </div>
     </div>
 
@@ -146,18 +137,38 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="align-content-center row col-10">
-        <a routerLink="/home">Home</a> |
-        <a routerLink="/login">Login</a> |
-        <a routerLink="/register">Register</a> |
-        <a (click)="logout()">Logout</a>
-      </div>
-    </div>
 
-
+    <div class="col-2"></div>
   </div>
-  <div class="col-2"></div>
+
+
+      <div class="col-2"></div>
+      <div class="col-8 container-fluid">
+        <br/>
+        <h2 class="profileHeader centerThis">
+          Sections You're Enrolled In:
+          ({{sections.length}})</h2>
+
+        <ul class="list-group">
+          <li
+            *ngFor="let section of sections"
+            class="list-group-item">
+            <div routerLink="/course/{{section.sectionId.courseId}}"
+                 class="float-left">
+              {{section.sectionId.name}}
+            </div>
+            <button
+              class="float-right btn btn-danger"
+              (click)="unenroll(section)">
+              Un-enroll
+            </button>
+          </li>
+        </ul>
+        <div class="col-2"></div>
+      </div>
+
+
+
+
+
 </div>

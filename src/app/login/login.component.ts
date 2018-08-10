@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     console.log([username, password]);
     selfReference.userService.findUserByCredentials(username, password)
       .then(function (user) {
-        if (user == null) {
+        if (user == 'garbage') {
           alert('Uth oh, it seems your username or password doesn\'t work!' +
             ' Please, try again.');
         } else {
