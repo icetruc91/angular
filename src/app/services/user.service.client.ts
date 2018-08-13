@@ -11,7 +11,7 @@ export class UserServiceClient {
       username: username,
       password: password
     };
-    return fetch('https://webdev-nodejs-madness.herokuapp.com/api/login', {
+    return fetch('http://localhost:3000/api/login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -22,7 +22,7 @@ export class UserServiceClient {
   }
 
   findUserByCredentials(username, password) {
-    return fetch( 'https://webdev-nodejs-madness.herokuapp.com/api/user/'+username+'/username/'+password+'/password')
+    return fetch( 'http://localhost:3000/api/user/'+username+'/username/'+password+'/password')
       .then(function (response) {
         if (response.status > 400) {
           return null;
@@ -32,7 +32,7 @@ export class UserServiceClient {
   }
 
   profile() {
-    return fetch('https://webdev-nodejs-madness.herokuapp.com/api/profile', {
+    return fetch('http://localhost:3000/api/profile', {
       credentials: 'include'
     })
       .then(response => response.json());
@@ -43,7 +43,7 @@ export class UserServiceClient {
 
   updateProfile(user) {
     console.log(user);
-    return fetch('https://webdev-nodejs-madness.herokuapp.com/api/updateProfile', {
+    return fetch('http://localhost:3000/api/updateProfile', {
       credentials: 'include',
       method: 'put',
       body: JSON.stringify(user),
@@ -54,7 +54,7 @@ export class UserServiceClient {
   }
 
   findUserByUsername(username) {
-    return fetch('https://webdev-nodejs-madness.herokuapp.com/api/user/' + username + '/username')
+    return fetch('http://localhost:3000/api/user/' + username + '/username')
       .then(function (response) {
         if (response.status > 400) {
           return null;
@@ -69,7 +69,7 @@ export class UserServiceClient {
       username: username,
       password: password
     };
-    return fetch('https://webdev-nodejs-madness.herokuapp.com/api/register/', {
+    return fetch('http://localhost:3000/api/register/', {
       body: JSON.stringify(user),
       credentials: 'include',
       method: 'POST',
@@ -80,14 +80,14 @@ export class UserServiceClient {
   }
 
   logout() {
-    return fetch('https://webdev-nodejs-madness.herokuapp.com/api/logout/', {
+    return fetch('http://localhost:3000/api/logout/', {
       method: 'post',
       credentials: 'include'
     });
   }
 
   findUserById(userId) {
-    return fetch('https://webdev-nodejs-madness.herokuapp.com/api/user/' + userId, {
+    return fetch('http://localhost:3000/api/user/' + userId, {
       credentials: 'include'
     })
       .then(response => response.json());
