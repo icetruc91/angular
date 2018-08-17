@@ -7,6 +7,7 @@ import {ProfileComponent} from "./profile/profile.component";
 import {SectionComponent} from "./section/section.component";
 import {QuizListComponent} from "./quiz-list/quiz-list.component";
 import {QuizTakerComponent} from "./quiz-taker/quiz-taker.component";
+import {QuizSubmissionComponent} from "./quiz-submission/quiz-submission.component";
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'quizzes', component: QuizListComponent},
   {path: 'quiz/:quizId', component: QuizTakerComponent},
+  {path: 'quiz/:quizId/submit/', component: QuizSubmissionComponent},
   {path: 'course/:courseId', component: CourseViewerComponent},
   {path: 'course/:courseId/section', component: SectionComponent},
   {path: 'course/:courseId/module/:moduleId', component: CourseViewerComponent},

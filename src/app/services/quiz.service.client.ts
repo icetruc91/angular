@@ -3,9 +3,6 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class QuizServiceClient {
-  createQuiz(quiz) {
-  }
-
 
   submitQuiz =  quiz =>
     fetch('http://localhost:3000/api/quiz/' + quiz._id + '/submission', {
@@ -18,6 +15,7 @@ export class QuizServiceClient {
     })
       .then(response => response.json());
 
+
   findAllQuizzes() {
     console.log('find all quizzes in quiz.service.client');
     return fetch('http://localhost:3000/api/quiz')
@@ -29,6 +27,12 @@ export class QuizServiceClient {
     return fetch('http://localhost:3000/api/quiz/' + quizId)
       .then(response => response.json());
   };
+
+  findAllSubmissions(quizId) {
+    console.log('find all submissions for quiz');
+    return fetch('http://localhost:3000/api/quiz/'+ quizId +'/submission')
+      .then(response => response.json());
+  }
 
 
   updateQuiz(quizId, quiz) {
